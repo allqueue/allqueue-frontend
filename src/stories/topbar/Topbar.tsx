@@ -1,7 +1,7 @@
 import React from 'react';
 import './Topbar.css';
-import allqueueLogo from "../../public/allqueueLogo.svg"
-import loginIcon from "../../public/icons/login.svg"
+import allqueueLogo from "#/allqueueLogo.svg"
+import loginIcon from "#/icons/login.svg"
 import Image from 'next/image';
 
 
