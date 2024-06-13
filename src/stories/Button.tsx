@@ -1,50 +1,38 @@
 import React from 'react';
 import './button.css';
-
+import { useTranslations } from "next-intl";
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
+  size: 'medium-fit' | 'medium-wide' | 'large-wide';
+  text: string;
+  color?: string;
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
+  game?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Button = ({
-  primary = false,
-  size = 'medium',
+  size = 'large-wide',
+  text,
+  game,
   backgroundColor,
-  label,
-  ...props
+  color,  
+  onClick,
+  disabled
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      {...props}
+      className={['basic-button', `basic-button--${size}`, `${game}`].join(' ')}
+      disabled={disabled}
+      onClick={onClick}
     >
-      {label}
+      {text}
       <style jsx>{`
         button {
           background-color: ${backgroundColor};
+          color: ${color}
         }
       `}</style>
     </button>

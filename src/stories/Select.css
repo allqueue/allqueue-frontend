@@ -1,0 +1,10 @@
+select{
+  /* color: #fff; */
+  padding: 0px 10px;
+  border-radius: 10rem;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: transparent;
+  height: 32px;
+  color: #fff;
+}
