@@ -22,6 +22,9 @@ export const SelectTest: Story = {
     options: [{
       label: '리그오브레전드',
       value: 'lol'
+    },{
+      label: '오버워치',
+      value: 'overwatch'
     }],
     label: 'test',
     name: 'ts'

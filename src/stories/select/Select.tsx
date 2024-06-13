@@ -18,7 +18,7 @@ export const Select = ({
   options=[],
   active = '',
   borderColor= '#d9d9d9',
-  width='160px',
+  width='120px',
   name
 }: SelectProps) => {
   

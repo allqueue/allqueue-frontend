@@ -3,6 +3,7 @@ import './Topbar.css';
 import allqueueLogo from "#/allqueueLogo.svg"
 import loginIcon from "#/icons/login.svg"
 import Image from 'next/image';
+import { Select } from '../select/Select';
 
 
 interface TopbarProps {
@@ -25,11 +26,22 @@ export const Topbar = ({
       </section>
 
       <section>
-        <select name="games" id="game" className='mr-2'>
-          <option value="lol">리그오브레전드</option>
-          <option value="lol">오버워치</option>
-        </select>
+        <Select
+          label="test"
+          name="ts"
+          options={[
+            {
+              label: '리그오브레전드',
+              value: 'lol'
+            },
+            {
+              label: '오버워치',
+              value: 'overwatch'
+            }
+          ]}
+        />
         <Image
+          className="pl-4"
           height="20"
           src={loginIcon}
           alt="loginIcon"
