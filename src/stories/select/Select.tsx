@@ -1,5 +1,5 @@
 import React from 'react';
-import './Select.css';
+import './Select.scss';
 
 interface SelectProps {
   options?: {
