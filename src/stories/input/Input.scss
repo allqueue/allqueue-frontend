@@ -1,0 +1,46 @@
+label {
+  color: #292929;
+  font-size: 1rem;
+}
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+.input-disabled {
+  input {
+    color: #353535;
+    background-color: #e3e3e3;
+  }
+}
+input {
+  border-radius: 20px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0 28px;
+  height: 36px;
+  color: #292929;
+  &:focus, &:active, &:hover, &::before, &::after, &:focus-visible {
+    border-color: #1e53ff;
+  }
+}
+.prefix-icon {
+  position: relative;
+  left: 24px;
+  margin-left: -16px;
+}
+.suffix-icon {
+  position: relative;
+  right: 24px;
+  margin-right: -16px;
+}
+.vertical-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.horizontal-main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
