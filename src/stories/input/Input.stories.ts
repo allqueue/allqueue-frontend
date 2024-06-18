@@ -17,13 +17,40 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 
-export const InputTest: Story = {
+export const InputDefault: Story = {
+  args: {
+    label: '라벨',
+    placeholder: '텍스트를 입력해주세요.',
+    onInput: (value) => {
+      console.log(value);
+    }
+  },
+};
+
+export const InputVertical: Story = {
   args: {
     type: 'vertical',
     label: '라벨',
-    width: '180px',
-    prefixIcon: "src/stories/assets/discord.svg",
-    suffixIcon: "src/stories/assets/discord.svg",
+    placeholder: 'light mode',
+    height: '32px',
+    width: '200px',
+    prefixIcon: "/src/stories/assets/discord.svg",
+    suffixIcon: "/src/stories/assets/discord.svg",
+    theme: 'light',
+    onInput: (value) => {
+      console.log(value);
+    }
+  },
+};
+export const InputHorizontal: Story = {
+  args: {
+    type: 'horizontal',
+    label: '라벨',
+    placeholder: '비활성화 Input',
+    height: '40px',
+    width: '220px',
+    prefixIcon: "@/stories/assets/discord.svg",
+    disabled: true,
     onInput: (value) => {
       console.log(value);
     }
