@@ -23,7 +23,7 @@ export const ButtonLargeWide: Story = {
   args: {
     size: 'large-wide',
     text: 'MATCH',
-    game: 'lol'
+    theme: 'lol'
   },
 };
 
@@ -31,6 +31,6 @@ export const ButtonWaiting: Story = {
   args: {
     size: 'large-wide',
     text: 'MATCH',
-    game: 'lol-waiting'
+    theme: 'lol-waiting'
   },
 };

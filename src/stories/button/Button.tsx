@@ -6,7 +6,7 @@ interface ButtonProps {
   text: string;
   color?: string;
   backgroundColor?: string;
-  game?: string;
+  theme?: string;
   disabled?: boolean;
   onClick?: () => void;
 }
@@ -14,7 +14,7 @@ interface ButtonProps {
 export const Button = ({
   size = 'large-wide',
   text,
-  game,
+  theme,
   backgroundColor,
   color,  
   onClick,
@@ -24,7 +24,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['basic-button', `basic-button--${size}`, `${game}`].join(' ')}
+      className={['basic-button', `basic-button--${size}`, `${theme}`].join(' ')}
       disabled={disabled}
       onClick={onClick}
     >
