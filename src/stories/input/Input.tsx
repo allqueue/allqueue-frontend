@@ -1,8 +1,9 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState  } from "react";
 import Image from "next/image";
 import "./Input.scss";
 
 interface InputProps {
+  value?: string;
   type?: "vertical" | "horizontal";
   label: string;
   placeholder?: string,
@@ -16,6 +17,7 @@ interface InputProps {
 }
 
 export const Input = ({
+  value = "",
   type,
   label,
   placeholder,
@@ -27,8 +29,12 @@ export const Input = ({
   theme,
   onInput,
 }: InputProps) => {
+  const [inputValue, setInputValue] = useState(value);
+
   const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    onInput(e.target.value);
+    const newValue = e.target.value;
+    setInputValue(newValue);
+    onInput(newValue);
   };
 
   return (
@@ -47,6 +53,7 @@ export const Input = ({
           />
         )}
         <input
+          value={inputValue}
           style={{ height, width }}
           className={`${prefixIcon ? "input-prefix" : ""} ${suffixIcon ? "input-suffix" : ""}`}
           disabled={disabled}
