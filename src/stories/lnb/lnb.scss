@@ -1,0 +1,56 @@
+.global-lnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #2B2D31;
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  transition: transform 0.3s ease; /* 애니메이션 추가 */
+  transform: translateX(0);
+}
+.global-lnb.closed {
+  transform: translateX(-100%);
+}
+
+.global-lnb.lol {}
+.global-lnb.overwatch {}
+
+.global-lnb ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.global-lnb li {
+  width: 100%;
+  margin: 0;
+  height: 32px;
+  align-items: center;
+  display: flex;
+}
+
+.global-lnb a {
+  color: #ecf0f1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  width: 100%;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  &::before, &:hover, &:focus, &:active, &::after{
+    background-color: #ffffff00;
+  }
+}
+
+.global-lnb img {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}

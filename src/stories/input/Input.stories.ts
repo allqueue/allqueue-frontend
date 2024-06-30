@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj, StoryFn  } from '@storybook/react';
+// import { useArgs } from '@storybook/preview-api';
 import { Input } from './Input';
 
 const meta = {
@@ -8,38 +9,65 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
+  argTypes: {
+    value: { control: 'text' },
+  },
   args: {
-    
+    value: '텍스트',
   },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-let value1 = "텍스트다";
+// const Template: StoryFn<typeof meta> = (args) => {
+//   const [{ value }, updateArgs] = useArgs();
+
+//   const handleInput = (newValue: string) => {
+//     updateArgs({ value: newValue });
+//   };
+
+//   return <Input {...args} value={value} onInput={handleInput} />;
+// };
+
+// export const InputDefault = (args: typeof meta) => {
+//   const [{ value }, updateArgs] = useArgs();
+
+//   const handleInput = (newValue: string) => {
+//     updateArgs({ value: newValue });
+//   };
+
+//   return <Input {...args} value={value} onInput={handleInput} />;
+//   // render: Template,
+//   // args: {
+//   //   label: '라벨',
+//   //   placeholder: '텍스트를 입력해주세요.',
+//   //   onInput: (value) => {
+//   //     console.log(value);
+//   //   }
+//   // },
+// };
 
 export const InputDefault: Story = {
   args: {
-    value: value1,
     label: '라벨',
     placeholder: '텍스트를 입력해주세요.',
     onInput: (value) => {
-      value1 = value;
-      console.log(value1);
+      console.log(value);
     }
   },
 };
 
+
 export const InputVertical: Story = {
   args: {
-    value: "",
     type: 'vertical',
     label: '라벨',
     placeholder: 'light mode',
     height: '32px',
     width: '200px',
-    prefixIcon: "/src/stories/assets/discord.svg",
-    suffixIcon: "/src/stories/assets/discord.svg",
+    prefixIcon: require("/src/stories/assets/discord.svg"),
+    suffixIcon: require("/src/stories/assets/discord.svg"),
     theme: 'light',
     onInput: (value) => {
       console.log(value);
@@ -48,13 +76,12 @@ export const InputVertical: Story = {
 };
 export const InputHorizontal: Story = {
   args: {
-    value: "",
     type: 'horizontal',
     label: '라벨',
     placeholder: '비활성화 Input',
     height: '40px',
     width: '220px',
-    prefixIcon: "@/stories/assets/discord.svg",
+    prefixIcon: require("@/stories/assets/discord.svg"),
     disabled: true,
     onInput: (value) => {
       console.log(value);

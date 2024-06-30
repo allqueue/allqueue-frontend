@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState  } from "react";
 import Image from "next/image";
-import "./Input.scss";
+import "./input.scss";
 
 interface InputProps {
   value?: string;
